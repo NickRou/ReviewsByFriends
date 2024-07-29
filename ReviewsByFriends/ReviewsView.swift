@@ -16,7 +16,12 @@ struct ReviewsView: View {
             Section(header: Text("Reviews")) {
                 ForEach(marker.reviews) { review in
                     VStack(alignment: .leading) {
-                        StarRatingView(rating: review.rating)
+                        HStack {
+                            Text(review.username)
+                                .font(.headline)
+                            Spacer()
+                            StarRatingView(rating: review.rating)
+                        }
                         Text(review.text)
                             .font(.body)
                     }

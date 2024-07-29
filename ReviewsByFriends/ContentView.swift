@@ -4,6 +4,7 @@ import MapKit
 struct ContentView: View {
     @StateObject private var searchCompleter = SearchCompleter()
     @StateObject private var markerStorage = MarkerStorage()
+    @StateObject private var userManager = UserManager()
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.3, longitude: -122.0),
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
@@ -12,8 +13,19 @@ struct ContentView: View {
     @State private var showingReviewSheet = false
     @State private var showingSuggestions = false
     @State private var showingReviews = false
+    @State private var showingLoginView = true  // New state variable
 
     var body: some View {
+        Group {
+            if showingLoginView {
+                LoginView(userManager: userManager, showingLoginView: $showingLoginView)
+            } else {
+                mainView
+            }
+        }
+    }
+
+    var mainView: some View {
         NavigationView {
             VStack {
                 SearchBar(text: $searchCompleter.searchText) {
@@ -41,10 +53,11 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.bottom)
                 }
             }
+
             .sheet(isPresented: $showingReviewSheet) {
                 if let marker = selectedMarker {
                     NavigationView {
-                        AddReviewView(marker: marker) { updatedMarker in
+                        AddReviewView(marker: marker, userManager: userManager) { updatedMarker in
                             markerStorage.updateMarker(updatedMarker)
                             selectedMarker = updatedMarker
                         }
@@ -63,6 +76,10 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Map Reviews")
+            .navigationBarItems(trailing: Button("Logout") {
+                userManager.logout()
+                showingLoginView = true  // Show login view on logout
+            })
         }
         .onChange(of: searchCompleter.searchText) { newValue in
             showingSuggestions = !newValue.isEmpty

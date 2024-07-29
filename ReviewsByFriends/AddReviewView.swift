@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AddReviewView: View {
     let marker: Marker
+    let userManager: UserManager
     let onSave: (Marker) -> Void
     @State private var reviewText: String = ""
     @State private var rating: Int = 3
@@ -25,7 +26,8 @@ struct AddReviewView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             Button("Submit Review") {
-                let newReview = Review(text: reviewText, rating: rating)
+                guard let currentUser = userManager.currentUser else { return }
+                let newReview = Review(text: reviewText, rating: rating, userId: currentUser.id, username: currentUser.username)
                 var updatedMarker = marker
                 updatedMarker.reviews.append(newReview)
                 onSave(updatedMarker)

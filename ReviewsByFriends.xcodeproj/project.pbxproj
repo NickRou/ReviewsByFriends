@@ -23,6 +23,9 @@
 		C4FD03EA2C540DAE00C345CD /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FD03E92C540DAE00C345CD /* ReviewsView.swift */; };
 		C4FD03EC2C540DC500C345CD /* MarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FD03EB2C540DC500C345CD /* MarkerAnnotationView.swift */; };
 		C4FD03EE2C540DD300C345CD /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FD03ED2C540DD300C345CD /* StarRatingView.swift */; };
+		C4FD03F22C574E0600C345CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FD03F12C574E0600C345CD /* User.swift */; };
+		C4FD03F42C574E1800C345CD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FD03F32C574E1800C345CD /* UserManager.swift */; };
+		C4FD03F62C574E4100C345CD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FD03F52C574E4100C345CD /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		C4FD03E92C540DAE00C345CD /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		C4FD03EB2C540DC500C345CD /* MarkerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerAnnotationView.swift; sourceTree = "<group>"; };
 		C4FD03ED2C540DD300C345CD /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		C4FD03F12C574E0600C345CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C4FD03F32C574E1800C345CD /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C4FD03F52C574E4100C345CD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 		C4FD03C62C53232000C345CD /* ReviewsByFriends */ = {
 			isa = PBXGroup;
 			children = (
+				C4FD03F32C574E1800C345CD /* UserManager.swift */,
+				C4FD03F12C574E0600C345CD /* User.swift */,
 				C4FD03E72C540D5700C345CD /* SuggestionRow.swift */,
 				C4FD03E52C540D4F00C345CD /* IdentifiableMapItem.swift */,
 				C4FD03E32C540D4000C345CD /* Review.swift */,
@@ -91,6 +99,7 @@
 				C4FD03E92C540DAE00C345CD /* ReviewsView.swift */,
 				C4FD03EB2C540DC500C345CD /* MarkerAnnotationView.swift */,
 				C4FD03ED2C540DD300C345CD /* StarRatingView.swift */,
+				C4FD03F52C574E4100C345CD /* LoginView.swift */,
 			);
 			path = ReviewsByFriends;
 			sourceTree = "<group>";
@@ -179,8 +188,11 @@
 				C4FD03E42C540D4000C345CD /* Review.swift in Sources */,
 				C4FD03C82C53232000C345CD /* ReviewsByFriendsApp.swift in Sources */,
 				C4FD03E22C540CA300C345CD /* Extensions.swift in Sources */,
+				C4FD03F42C574E1800C345CD /* UserManager.swift in Sources */,
 				C4FD03DC2C5348E500C345CD /* SearchCompleter.swift in Sources */,
 				C4FD03EE2C540DD300C345CD /* StarRatingView.swift in Sources */,
+				C4FD03F22C574E0600C345CD /* User.swift in Sources */,
+				C4FD03F62C574E4100C345CD /* LoginView.swift in Sources */,
 				C4FD03D62C5323D700C345CD /* AddReviewView.swift in Sources */,
 				C4FD03DE2C534A0500C345CD /* MarkerStorage.swift in Sources */,
 				C4FD03E02C540C5600C345CD /* Marker.swift in Sources */,
